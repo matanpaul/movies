@@ -1,0 +1,27 @@
+<h1>Welcome to RetFlix! See our collection of movies below</h1>
+
+<div>
+	<a href="<%= new_movie_path%>"> movies </a>
+	
+	<%=form_tag "/", :method =>:get, :class => 'form-search' do %>
+		<%= text_field_tag(:q, params[:q]) %>
+  		<%= submit_tag("Search",:class => 'btn') %>
+	<% end %>
+
+	<table class ='table table-condensed'>
+		<tr>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Year Released</th>
+		</tr>
+		<%@movies.each do |movie|%>
+			<tr>
+				<td><%=movie.title%></td>
+				<td><%=movie.description%></td>
+				<td><%=movie.year_released%></td>
+			</tr>
+		<%end%>	
+	</table>
+
+
+</div>
