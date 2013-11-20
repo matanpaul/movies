@@ -29,6 +29,13 @@ class MoviesController < ApplicationController
 		redirect_to root_path
 	end
 
+	def destroy
+		@movie = Movie.find(params[:id])
+		@movie.destroy
+		redirect_to root_path
+
+	end
+
 	private
 
 	def safe_movie_params

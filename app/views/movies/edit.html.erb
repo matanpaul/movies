@@ -1,3 +1,5 @@
 <h2>Edit a movie!</h2>
 
 <%= render "movies/form"%>
+
+<%= button_to "Delete Movie", movie_path(@movie), :method => :delete%>
